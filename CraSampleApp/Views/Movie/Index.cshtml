@@ -1,0 +1,32 @@
+﻿@model List<CraSampleApp.Domain.Domain.Data.Model.MovieList>
+  
+<br />
+<a class="btn btn-primary pull-right" href="/Movie/Create">
+    Create
+</a>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Movie Name</th>
+            <th>Movie Type</th>
+            <th>Actor Count</th>
+            <th></th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.MovieType</td>
+                <td>@item.ActorCount</td>
+                <td><a href="/Movie/Edit/@item.Id">Edit</a></td>
+                <td><a href="/Movie/Delete/@item.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
